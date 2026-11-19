@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="fireWarp" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.03" numOctaves="2" seed="4" result="n">
+      <animate attributeName="baseFrequency" dur="9s" values="0.012 0.03;0.018 0.05;0.012 0.03" repeatCount="indefinite"/>
+    </feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="70"/>
+  </filter>
+</svg>
+
+<div class="scene" aria-hidden="true">
+  <div class="vignette"></div>
+  <div class="fire"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <canvas id="embers"></canvas>
+</div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#home"><span class="brand-mark"></span>PORTFOLIO</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  <nav id="menu">
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <p class="kicker">Hello, I'm</p>
+      <h1><span class="name">Jhudem S. Toquillo</span></h1>
+      <p class="role"><span id="typed"></span><span class="cursor">|</span></p>
+      <p class="lead">I build websites and experiment with game ideas.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn ghost" href="#contact">Contact me</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="orb"><img src="images/profile.jpg" alt="Portrait of me"></div>
+    </div>
+  </section>
+
+  <section class="panel" id="about">
+    <h2>About me</h2>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>I'm a student developer from the Philippines. I like turning ideas into working websites.</p>
+        <p>Right now I'm building my web skills and trying out game development.</p>
+      </div>
+      <ul class="facts">
+        <li><b>Location</b> Philippines</li>
+        <li><b>Focus</b> Web development</li>
+        <li><b>Hobby</b> Game dev, anime</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="panel" id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill" data-level="85"><span>HTML &amp; CSS</span><i><b></b></i></div>
+      <div class="skill" data-level="70"><span>JavaScript</span><i><b></b></i></div>
+      <div class="skill" data-level="45"><span>Game development</span><i><b></b></i></div>
+    </div>
+  </section>
+
+  <section class="panel" id="projects">
+    <h2>Projects</h2>
+    <div class="tabs">
+      <button class="tab active" data-filter="all">All</button>
+      <button class="tab" data-filter="web">Web</button>
+      <button class="tab" data-filter="game">Games</button>
+      <button class="tab" data-filter="cert">Certificates</button>
+    </div>
+    <div class="cards">
+      <article class="card" data-type="web" data-title="Portfolio Website" data-desc="This site: a responsive portfolio with an animated fire and bubble theme, filterable project cards and a contact form.">
+        <span class="tag">Web</span><h3>Portfolio Website</h3><p>A responsive personal site with animated effects.</p><button class="more">Details</button>
+      </article>
+      <article class="card" data-type="web" data-title="Landing Page" data-desc="A clean, mobile-friendly landing page built with HTML, CSS and JavaScript. It has a hero section with a clear call-to-action button, a features section and a simple contact area, all laid out with flexbox and grid so it adapts from phone to desktop. I practiced responsive design, consistent spacing and typography, and smooth scrolling between sections.">
+        <span class="tag">Web</span><h3>Landing Page</h3><p>A clean, mobile-friendly landing page.</p><button class="more">Details</button>
+      </article>
+      <article class="card" data-type="game" data-title="Game Prototype" data-desc="An early prototype of a small action game, built to learn the basics of game development. So far it covers the core idea, player movement and controls, and a simple challenge loop. It is still a work in progress: next steps are adding enemies, scoring and polished visuals and sound.">
+        <span class="tag">Game</span><h3>Game Prototype</h3><p>An early prototype of a small action game.</p><button class="more">Details</button>
+      </article>
+      <article class="card" data-type="cert" data-title="Networking and Data Security" data-desc="Certificate of Participation. A 1hr 30min online webinar via Google Meet held on September 16, 2026, organized by Ethel Programming Computer Programming Services." data-img="images/cert-networking-data-security.png">
+        <span class="tag cert">Certificate</span><h3>Networking and Data Security</h3><p>Certificate of Participation, September 16, 2026.</p><button class="more">Details</button>
+      </article>
+      <article class="card" data-type="cert" data-title="CompTIA Network and Security" data-desc="Certificate of Appreciation. Next-Gen Networkers: CompTIA Network and Security, a 1hr online webinar via Google Meet held on September 18, 2026, organized by Ethel Programming Computer Programming Services." data-img="images/cert-comptia-network-security.png">
+        <span class="tag cert">Certificate</span><h3>CompTIA Network and Security</h3><p>Certificate of Appreciation, September 18, 2026.</p><button class="more">Details</button>
+      </article>
+    </div>
+  </section>
+
+  <section class="panel" id="contact">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p>Have a project or question? Send me a message and I'll reply by email.</p>
+        <ul>
+          <li><b>Email</b> Jhudemtoquillo9@gmail.com</li>
+          <li><b>Location</b> Philippines</li>
+        </ul>
+      </div>
+      <form id="contactForm" novalidate>
+        <label>Name<input id="fName" type="text" autocomplete="name"></label>
+        <label>Email<input id="fEmail" type="email" autocomplete="email"></label>
+        <label>Message<textarea id="fMsg" rows="5"></textarea></label>
+        <p class="form-msg" id="formMsg" role="status"></p>
+        <button class="btn primary" type="submit">Send message</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>&copy; <span id="year"></span> Jhudem S. Toquillo. All rights reserved.</footer>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="close" id="closeModal" aria-label="Close">&times;</button>
+    <h3 id="mTitle"></h3>
+    <img id="mImg" alt="" hidden>
+    <p id="mDesc"></p>
+  </div>
+</div>
+<button class="to-top" id="toTop" aria-label="Back to top">&uarr;</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>
